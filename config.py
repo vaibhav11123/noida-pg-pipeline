@@ -9,10 +9,35 @@
 import os
 from pathlib import Path
 
-from dotenv import load_dotenv
+
+def _load_repo_dotenv(path: Path) -> None:
+    """Load KEY=VALUE pairs from `.env` into os.environ without overriding existing keys."""
+    if not path.is_file():
+        return
+    try:
+        text = path.read_text(encoding="utf-8")
+    except OSError:
+        return
+    for raw in text.splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#"):
+            continue
+        if line.startswith("export "):
+            line = line[7:].lstrip()
+        if "=" not in line:
+            continue
+        key, _, val = line.partition("=")
+        key = key.strip()
+        if not key:
+            continue
+        val = val.strip()
+        if len(val) >= 2 and val[0] == val[-1] and val[0] in "\"'":
+            val = val[1:-1]
+        os.environ.setdefault(key, val)
+
 
 _REPO_ROOT = Path(__file__).resolve().parent
-load_dotenv(_REPO_ROOT / ".env")
+_load_repo_dotenv(_REPO_ROOT / ".env")
 
 
 def _env(name: str, default: str = "") -> str:

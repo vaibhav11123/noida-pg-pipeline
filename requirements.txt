@@ -16,6 +16,5 @@ pandas==2.2.2             # DataFrame manipulation, CSV I/O
 phonenumbers==8.13.37     # E.164 normalization + libphonenumber validation
 
 # ── Utilities ─────────────────────────────────────────────────────────────────
-python-dotenv==1.0.1      # optional: load .env files for secrets
 tqdm==4.66.4              # progress bars for long loops
 tenacity==8.3.0           # retry logic for flaky API calls
