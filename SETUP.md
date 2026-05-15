@@ -62,9 +62,9 @@ Export your session cookies after logging in manually:
 4. Navigate to any PG search page on NoBroker
 5. Click any XHR request in the Network tab
 6. Copy the **Cookie** header value from the Request Headers
-7. Add to `.env` (single line; quote if needed in your shell, not required in `.env`):
+7. Add to `.env`. If the cookie string contains spaces or `#`, wrap the entire value in double quotes:
    ```bash
-   NOBROKER_COOKIES_RAW=nb_session=xxx; auth_token=yyy; ...
+   NOBROKER_COOKIES_RAW="nb_session=xxx; auth_token=yyy; ..."
    ```
 
 ---
