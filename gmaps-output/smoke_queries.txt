@@ -1,0 +1,4 @@
+# Smoke test for gosom (3 jobs). Lines starting with # are stripped by run_gmaps_scraper.sh.
+PG in Sector 62 Noida
+PG in Sector 57 Noida
+paying guest Sector 63 Noida

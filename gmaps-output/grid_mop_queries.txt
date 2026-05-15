@@ -1,0 +1,5 @@
+# Broad queries for grid “mop” pass only (paired with every grid cell — keep this file tiny).
+# See scripts/run_gmaps_scraper.sh grid-mop
+PG in Noida
+paying guest Noida
+hostel Noida

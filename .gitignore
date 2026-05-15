@@ -1,0 +1,48 @@
+# Python
+.DS_Store
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Tests / tooling
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Logs & run artifacts (regenerate; large / noisy)
+*.log
+pipeline.log
+
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Playwright / browser
+**/test-results/
+**/playwright-report/
+
+# Scraper output (large; reproducible from scripts + Docker)
+gmaps-output/gmaps-backups/
+gmaps-output/*.pid
+gmaps-output/*.csv
+!gmaps-output/docker_smoke.csv
+
+# Local pipeline data (PII / large JSON). Smoke CSVs stay tracked.
+data/merged/*.csv
+data/final_pg_contacts.csv
+data/whatsapp_outreach*.csv
+data/raw/*.json
+data/raw/*.csv
+!data/raw/*smoke*.csv

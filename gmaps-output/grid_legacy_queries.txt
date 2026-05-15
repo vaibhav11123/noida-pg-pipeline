@@ -1,0 +1,2 @@
+# Single-query grid for legacy tight bbox (Sector 62 cluster) — do not use full gmaps-queries.txt here.
+PG in Sector 62 Noida
