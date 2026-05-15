@@ -29,6 +29,9 @@ pipeline.log
 .env.*
 !.env.example
 
+# Local editor / agent artifacts
+mcp-resource-*.json
+
 # Playwright / browser
 **/test-results/
 **/playwright-report/
